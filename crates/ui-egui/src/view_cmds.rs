@@ -704,7 +704,8 @@ fn label_of(key: &str) -> String {
             out.push(c);
         }
     }
-    out
+    let translated = tl!(&out);
+    if translated == out { crate::filter_dialog::label(key) } else { translated.to_owned() }
 }
 
 /// Body of a `__form` dialog: text fields, number fields, checkboxes and `__choices` dropdowns.
