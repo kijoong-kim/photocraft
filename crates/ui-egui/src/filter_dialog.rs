@@ -227,7 +227,7 @@ pub(crate) fn label(key: &str) -> String {
     tl!(&source_label(key)).to_owned()
 }
 
-fn source_label(key: &str) -> String {
+pub(crate) fn source_label(key: &str) -> String {
     // camelCase → "Camel Case"
     let mut s = String::new();
     for (i, ch) in key.chars().enumerate() {
